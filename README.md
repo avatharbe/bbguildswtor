@@ -2,12 +2,12 @@
 
 [![Tests](https://github.com/avatharbe/bbguildswtor/actions/workflows/tests.yml/badge.svg)](https://github.com/avatharbe/bbguildswtor/actions/workflows/tests.yml)
 
-Game plugin that adds Star Wars: The Old Republic support to [bbGuild](https://github.com/avandenberghe/bbguild).
+Game plugin that adds Star Wars: The Old Republic support to [bbGuild](https://github.com/avatharbe/bbguild).
 
 ## Features
 
 - **SWTOR Classes** - 9 classes (Trooper, Smuggler, Jedi Knight, Jedi Consular, Bounty Hunter, Sith Warrior, Imperial Agent, Sith Inquisitor) with color codes
-- **SWTOR Races** - 11 playable races (Miraluka, Twi'lek, Zabrak, Miralian, Human, Chiss, Rattataki, Red Sith, Cathar, Cyborg) with gender-specific images
+- **SWTOR Races** - 13 playable races (Miraluka, Twi'lek, Zabrak, Miralian, Human, Chiss, Rattataki, Red Sith, Cathar, Cyborg, Togruta, Nautolan) with gender-specific images
 - **Factions** - 4 factions: Galactic Republic, Jedi Order, Sith Empire, Sith Lords
 - **Localization** - Class and race names in English, German, and French
 - **Database Links** - Boss and zone URLs linked to SWTOR Spy
@@ -15,7 +15,7 @@ Game plugin that adds Star Wars: The Old Republic support to [bbGuild](https://g
 ## Requirements
 
 - phpBB >= 3.3.0
-- PHP >= 7.4.0
+- PHP >= 8.1.0
 - **bbGuild core** (`avathar/bbguild`) must be installed and enabled
 
 ## Installation
@@ -59,9 +59,9 @@ Game plugin that adds Star Wars: The Old Republic support to [bbGuild](https://g
 | 7 | Imperial Agent | Sith Empire | Augmented |
 | 8 | Sith Inquisitor | Sith Lords | Robe |
 
-### Races (11)
+### Races (13)
 
-Miraluka, Twi'lek, Zabrak, Miralian, Human, Chiss, Rattataki, Red Sith, Cathar, Cyborg
+Miraluka, Twi'lek, Zabrak, Miralian, Human, Chiss, Rattataki, Red Sith, Cathar, Cyborg, Togruta, Nautolan
 
 ## License
 
@@ -69,5 +69,5 @@ Miraluka, Twi'lek, Zabrak, Miralian, Human, Chiss, Rattataki, Red Sith, Cathar, 
 
 ## Links
 
-- [bbGuild Core](https://github.com/avandenberghe/bbguild)
-- [Issue Tracker](https://github.com/avandenberghe/bbguild/issues)
+- [bbGuild Core](https://github.com/avatharbe/bbguild)
+- [Issue Tracker](https://github.com/avatharbe/bbguildswtor/issues)
