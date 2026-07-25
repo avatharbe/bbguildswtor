@@ -4,12 +4,12 @@
 
 [![Tests](https://github.com/avatharbe/bbguildswtor/actions/workflows/tests.yml/badge.svg)](https://github.com/avatharbe/bbguildswtor/actions/workflows/tests.yml)
 
-Star Wars: The Old Republic splits its playerbase down the middle — Republic and Empire guilds rarely mix, and that faction line runs through everything from strongholds to PvP, so a guild roster tool needs to respect it rather than paper over it. bbguildswtor covers all 9 classes and 13 races (including Togruta and Nautolan), the four factions (Galactic Republic, Jedi Order, Sith Empire, Sith Lords), and boss/zone links straight to SWTOR Spy. Your guild's roster, recruitment, and character claiming now live where the rest of your community already reads and posts.
+Star Wars: The Old Republic splits its playerbase down the middle — Republic and Empire guilds rarely mix, and that faction line runs through everything from strongholds to PvP, so a guild roster tool needs to respect it rather than paper over it. bbguildswtor covers all 8 classes and 12 races (including Togruta and Nautolan), the four factions (Galactic Republic, Jedi Order, Sith Empire, Sith Lords), and boss/zone links straight to SWTOR Spy. Your guild's roster, recruitment, and character claiming now live where the rest of your community already reads and posts.
 
 ## Features
 
-- **SWTOR Classes** - 9 classes (Trooper, Smuggler, Jedi Knight, Jedi Consular, Bounty Hunter, Sith Warrior, Imperial Agent, Sith Inquisitor) with color codes
-- **SWTOR Races** - 13 playable races (Miraluka, Twi'lek, Zabrak, Miralian, Human, Chiss, Rattataki, Red Sith, Cathar, Cyborg, Togruta, Nautolan) with gender-specific images
+- **SWTOR Classes** - 8 classes (Trooper, Smuggler, Jedi Knight, Jedi Consular, Bounty Hunter, Sith Warrior, Imperial Agent, Sith Inquisitor) with color codes
+- **SWTOR Races** - 12 playable races (Miraluka, Twi'lek, Zabrak, Mirialan, Human, Chiss, Rattataki, Sith Pureblood, Cathar, Cyborg, Togruta, Nautolan) with gender-specific images
 - **Factions** - 4 factions: Galactic Republic, Jedi Order, Sith Empire, Sith Lords
 - **Localization** - Class and race names in English, German, and French
 - **Database Links** - Boss and zone URLs linked to SWTOR Spy
@@ -47,7 +47,7 @@ Star Wars: The Old Republic splits its playerbase down the middle — Republic a
 | 3 | Sith Empire |
 | 4 | Sith Lords |
 
-### Classes (9)
+### Classes (8)
 
 | ID | Class | Faction | Armor |
 |----|-------|---------|-------|
@@ -61,9 +61,9 @@ Star Wars: The Old Republic splits its playerbase down the middle — Republic a
 | 7 | Imperial Agent | Sith Empire | Augmented |
 | 8 | Sith Inquisitor | Sith Lords | Robe |
 
-### Races (13)
+### Races (12)
 
-Miraluka, Twi'lek, Zabrak, Miralian, Human, Chiss, Rattataki, Red Sith, Cathar, Cyborg, Togruta, Nautolan
+Miraluka, Twi'lek, Zabrak, Mirialan, Human, Chiss, Rattataki, Sith Pureblood, Cathar, Cyborg, Togruta, Nautolan
 
 ## License
 
