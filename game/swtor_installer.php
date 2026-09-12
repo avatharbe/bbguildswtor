@@ -163,4 +163,39 @@ class swtor_installer extends abstract_game_install
 
 		$this->db->sql_multi_insert($this->table('bb_language_table'), $sql_ary);
 	}
+
+	/**
+	 * Installs SWTOR Disciplines (issue #6).
+	 *
+	 * Skipped if bb_specializations_table isn't wired in (older core
+	 * installs that haven't run migration v200b4 yet).
+	 */
+	protected function install_specs(): void
+	{
+		if (!isset($this->table_names['bb_specializations_table']))
+		{
+			return;
+		}
+
+		$rows = [];
+		foreach (swtor_provider::spec_catalog() as $class_id => $specs)
+		{
+			foreach ($specs as $spec)
+			{
+				$rows[] = [
+					'game_id'    => $this->game_id,
+					'class_id'   => (int) $class_id,
+					'role_id'    => (int) $spec['role_id'],
+					'spec_name'  => (string) $spec['spec_name'],
+					'spec_icon'  => (string) $spec['spec_icon'],
+					'spec_order' => (int) $spec['spec_order'],
+				];
+			}
+		}
+		if (!$rows)
+		{
+			return;
+		}
+		$this->db->sql_multi_insert($this->table('bb_specializations_table'), $rows);
+	}
 }

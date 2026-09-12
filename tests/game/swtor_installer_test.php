@@ -75,6 +75,29 @@ class swtor_installer_test extends TestCase
 		$method->invoke($this->installer);
 	}
 
+	/**
+	 * Set (key => value) or remove (value === null) a single entry in the
+	 * installer's table_names map, on top of whatever setUp() put there.
+	 */
+	private function set_table_name(string $key, ?string $value): void
+	{
+		$ref = new \ReflectionClass($this->installer);
+		$tn = $ref->getProperty('table_names');
+		$tn->setAccessible(true);
+		$current = $tn->getValue($this->installer);
+
+		if ($value === null)
+		{
+			unset($current[$key]);
+		}
+		else
+		{
+			$current[$key] = $value;
+		}
+
+		$tn->setValue($this->installer, $current);
+	}
+
 	// ── Factions ───────────────────────────────────────────
 
 	public function test_install_factions_count(): void
@@ -203,5 +226,54 @@ class swtor_installer_test extends TestCase
 		{
 			$this->assertSame(13, $count, "$lang has 13 race name entries");
 		}
+	}
+
+	// ── Disciplines (install_specs) ─────────────────────────
+	//
+	// swtor_installer implements install_specs() with a full
+	// 8-class x 6-discipline catalog (see game/swtor_provider.php's
+	// spec_catalog()) — issue #6.
+
+	public function test_install_specs_seeds_when_table_wired(): void
+	{
+		$this->set_table_name('bb_specializations_table', 'phpbb_bb_specializations');
+
+		$this->invoke_protected('install_specs');
+
+		$this->assertCount(1, $this->inserted);
+		// 8 classes x 6 disciplines = 48
+		$this->assertCount(48, $this->inserted[0]['data']);
+
+		foreach ($this->inserted[0]['data'] as $row)
+		{
+			$this->assertSame('swtor', $row['game_id']);
+			$this->assertContains($row['class_id'], range(1, 8), "spec '{$row['spec_name']}' has a valid class_id");
+			$this->assertContains($row['role_id'], array(0, 1, 2), "spec '{$row['spec_name']}' has a valid role_id");
+			$this->assertNotSame('', $row['spec_name'], 'spec_name must not be empty');
+			$this->assertContains($row['spec_order'], range(1, 6));
+		}
+	}
+
+	public function test_install_specs_class_ids_have_six_disciplines_each(): void
+	{
+		$this->set_table_name('bb_specializations_table', 'phpbb_bb_specializations');
+
+		$this->invoke_protected('install_specs');
+
+		$per_class = array_count_values(array_column($this->inserted[0]['data'], 'class_id'));
+		foreach (range(1, 8) as $class_id)
+		{
+			$this->assertArrayHasKey($class_id, $per_class, "class_id $class_id has Disciplines seeded");
+			$this->assertSame(6, $per_class[$class_id], "class_id $class_id has 6 Disciplines (2 Advanced Classes x 3)");
+		}
+	}
+
+	public function test_install_specs_skips_when_table_not_wired(): void
+	{
+		$this->set_table_name('bb_specializations_table', null);
+
+		$this->invoke_protected('install_specs');
+
+		$this->assertCount(0, $this->inserted, 'install_specs() must no-op when bb_specializations_table is not in table_names');
 	}
 }
