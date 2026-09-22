@@ -113,7 +113,7 @@ class avathar_bbguildswtor_guild_view_renders_test extends phpbb_functional_test
 		// backfills this for guilds created through the normal ACP flow,
 		// but a fixture inserting rows directly via SQL bypasses that flow
 		// entirely and needs to seed its own tab). Uses sql_query()+
-		// sql_nextid() rather than sql_multi_insert() so the new tab_id can
+		// sql_last_inserted_id() rather than sql_multi_insert() so the new tab_id can
 		// be read back for the module row below.
 		$db->sql_query('INSERT INTO ' . $prefix . 'bb_portal_tabs ' . $db->sql_build_array('INSERT', array(
 			'guild_id'   => self::GUILD_ID,
@@ -122,7 +122,7 @@ class avathar_bbguildswtor_guild_view_renders_test extends phpbb_functional_test
 			'tab_order'  => 0,
 			'tab_status' => 1,
 		)));
-		$tab_id = (int) $db->sql_nextid();
+		$tab_id = (int) $db->sql_last_inserted_id();
 
 		$db->sql_multi_insert($prefix . 'bb_portal_modules', array(array(
 			'module_classname'    => '\avathar\bbguild\portal\modules\roster',
