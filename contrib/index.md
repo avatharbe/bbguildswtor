@@ -1,11 +1,5 @@
 # bbGuild - Star Wars: The Old Republic
 
-**Current version:** 2.0.0-rc2 (release candidate)
-
-[![Tests](https://github.com/avatharbe/bbguildswtor/actions/workflows/tests.yml/badge.svg)](https://github.com/avatharbe/bbguildswtor/actions/workflows/tests.yml)
-
-**Documentation:** [avatharbe.github.io/bbguildswtor](https://avatharbe.github.io/bbguildswtor/)
-
 Star Wars: The Old Republic splits its playerbase down the middle — Republic and Empire guilds rarely mix, and that faction line runs through everything from strongholds to PvP, so a guild roster tool needs to respect it rather than paper over it. bbguildswtor covers all 8 classes and 12 races (including Togruta and Nautolan), the four factions (Galactic Republic, Jedi Order, Sith Empire, Sith Lords), and boss/zone links straight to SWTOR Spy. Your guild's roster, recruitment, and character claiming now live where the rest of your community already reads and posts.
 
 ## Features
