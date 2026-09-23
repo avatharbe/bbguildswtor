@@ -1,5 +1,8 @@
 # bbGuild - Star Wars: The Old Republic
 
+<img width="683" height="199" alt="swtor_logo" src="https://github.com/user-attachments/assets/f29e55bf-76ea-429e-9ec3-eb012a64afe3" />
+
+
 **Current version:** 2.1.0
 
 [![Tests](https://github.com/avatharbe/bbguildswtor/actions/workflows/tests.yml/badge.svg)](https://github.com/avatharbe/bbguildswtor/actions/workflows/tests.yml)
